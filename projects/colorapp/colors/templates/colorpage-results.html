@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+&nbsp;
+<table>
+{% for key, value in colors.items %}
+    <tr>
+        <th>{{ key }}</th>
+        <td>{{ value }}</td>
+        <td style="background-color:{{ value }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}
