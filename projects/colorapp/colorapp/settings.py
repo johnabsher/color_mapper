@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!d0cpet01z#4e-y_oc!_^sh-i#ek^%r6+c7v7xhx))1ja_xyfr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['color-mapper-webui.appspot.com']
 
