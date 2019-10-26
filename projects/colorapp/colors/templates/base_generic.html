@@ -1,10 +1,70 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>My Project</title>
-    </head>
+<!doctype html>
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <title>Matplotlib Color Pallette Generator</title>
+  <meta name="description" content="This is a website that allows you to use a MatPlotLib Color Gradient to generate a color pallette.  It is useful for Data Visualisation, Machine Learning, and other Data Science tasks.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
 
-    <body>
-    {% block content %}{% endblock content %}
-    </body>
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #111;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+.row {
+  margin-left:160px;
+  display: flex;
+}
+/* Create two equal columns that sits next to each other */
+.column {
+  margin-left:10px;
+  flex: 50%;
+}
+</style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+<div class="sidenav">
+  {% block sidebar %}{% endblock %}
+</div>
+  <div class="row">
+  <div class="column">
+    {% block content %}{% endblock %}
+  </div>
+  <div class="column">
+    {% block results %}{% endblock %}
+  </div>
+</div>
+</body>
+
 </html>

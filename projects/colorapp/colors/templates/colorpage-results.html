@@ -1,13 +1,8 @@
-{% extends "base_generic.html" %}
+{% extends "colorpage.html" %}
 
-{% block content %}
-  <form action="" method="post">
-    {% csrf_token %}
-    <table>
-    {{ form.as_table }}
-    </table>
-    <input type="submit" value="Submit">
-  </form>
+{% block results %}
+<h2>Results</h2>
+&nbsp;
 &nbsp;
 <table>
 {% for key, value in colors.items %}
