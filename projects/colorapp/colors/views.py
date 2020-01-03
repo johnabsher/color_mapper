@@ -27,7 +27,7 @@ def test_p(request, colormap='viridis', n=7, flip=False):
 
 def color_json(request, colormap='viridis', n=7, flip=False):
     d = {}
-    d[colormap] = repr(dict(zip(range(0, n), get_rgb(n=n, colormap=colormap, flip=flip))))
+    d[colormap] = dict(zip(range(0, n), get_rgb(n=n, colormap=colormap, flip=flip)))
     return HttpResponse(json.dumps(d))
 
 
