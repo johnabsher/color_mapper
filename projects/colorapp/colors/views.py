@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from django.http import HttpResponse, HttpResponseRedirect
 from colors.get_colors import get_rgb
 from django.urls import reverse
+import json
 
 from colors.forms import GetHexForm
 
@@ -27,7 +28,7 @@ def test_p(request, colormap='viridis', n=7, flip=False):
 def color_json(request, colormap='viridis', n=7, flip=False):
     d = {}
     d[colormap] = repr(dict(zip(range(0, n), get_rgb(n=n, colormap=colormap, flip=flip))))
-    return HttpResponse(repr(d))
+    return HttpResponse(json.dumps(d))
 
 
 def hex_form(request):
